@@ -1,0 +1,12 @@
+const entrada = gets();
+
+const nomes = entrada.split(",");
+
+nomes.sort((a, b) => {
+  const x = a.toLowerCase();
+  const y = b.toLowerCase();
+
+  return x.localeCompare(y);
+});
+
+print(nomes.join(","));
