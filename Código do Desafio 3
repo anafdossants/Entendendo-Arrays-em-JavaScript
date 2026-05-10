@@ -1,0 +1,26 @@
+var input = gets();
+
+var cursos = [];
+
+
+try {
+  cursos = JSON.parse(input);
+} catch (e) {
+  cursos = [];
+}
+
+var disponiveis = [];
+
+for (var i = 0; i < cursos.length; i++) {
+  var curso = cursos[i];
+
+  if (curso && curso.disponivel === true) {
+    disponiveis.push(curso.nome);
+  }
+}
+
+if (disponiveis.length > 0) {
+  print(disponiveis.join(", "));
+} else {
+  print("Nenhum curso disponivel");
+}
